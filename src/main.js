@@ -1,17 +1,17 @@
-addPulsar1 = async() => {
+addPulsar = async(coinType = 529) => {
     if (!window.getOfflineSigner || !window.keplr) {
         alert("Please install keplr extension");
     }
-    console.log("using 118")
     window.keplr.experimentalSuggestChain({
-        chainId: 'pulsar-1',
+        chainId: 'pulsar-2',
         chainName: 'Secret Pulsar',
-        rpc: 'https://rpc.pulsar.stakeordie.com',
-        rest: 'https://api.pulsar.stakeordie.com',
+        rpc: 'https://rpc.pulsar.griptapejs.com/',
+        rest: 'https://api.pulsar.griptapejs.com',
+        
         bip44: {
-            coinType: 118,
+            coinType: coinType,
         },
-        coinType: 118,
+        coinType: coinType,
         stakeCurrency: {
             coinDenom: 'SCRT',
             coinMinimalDenom: 'uscrt',
@@ -44,57 +44,7 @@ addPulsar1 = async() => {
             average: 0.25,
             high: 0.4,
         },
-        features: ['secretwasm','ibc-transfer'],
-    });
-}
-
-addPulsar1CLI = async() => {
-    if (!window.getOfflineSigner || !window.keplr) {
-        alert("Please install keplr extension");
-    }
-    console.log("using 529")
-    window.keplr.experimentalSuggestChain({
-        chainId: 'pulsar-1',
-        chainName: 'Secret Pulsar',
-        rpc: 'https://rpc.pulsar.stakeordie.com',
-        rest: 'https://api.pulsar.stakeordie.com',
-        bip44: {
-            coinType: 529,
-        },
-        coinType: 529,
-        stakeCurrency: {
-            coinDenom: 'SCRT',
-            coinMinimalDenom: 'uscrt',
-            coinDecimals: 6,
-        },
-        bech32Config: {
-            bech32PrefixAccAddr: 'secret',
-            bech32PrefixAccPub: 'secretpub',
-            bech32PrefixValAddr: 'secretvaloper',
-            bech32PrefixValPub: 'secretvaloperpub',
-            bech32PrefixConsAddr: 'secretvalcons',
-            bech32PrefixConsPub: 'secretvalconspub',
-        },
-        currencies: [
-            {
-                coinDenom: 'SCRT',
-                coinMinimalDenom: 'uscrt',
-                coinDecimals: 6,
-            },
-        ],
-        feeCurrencies: [
-            {
-                coinDenom: 'SCRT',
-                coinMinimalDenom: 'uscrt',
-                coinDecimals: 6,
-            },
-        ],
-        gasPriceStep: {
-            low: 0.1,
-            average: 0.25,
-            high: 0.4,
-        },
-        features: ['secretwasm','ibc-transfer'],
+        features: ['secretwasm','ibc-transfer','ibc-go'],
     });
 }
 
@@ -144,7 +94,7 @@ addSanford = async() => {
             average: 0.0,
             high: 0.1,
         },
-        features: ['no-legacy-stdTx','ibc-transfer', 'ibc-go'],
+        features: ['no-legacy-stdTx','ibc-transfer','ibc-go'],
     });
 }
 
