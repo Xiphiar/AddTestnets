@@ -54,10 +54,10 @@ addSanford = async() => {
     }
 
     window.keplr.experimentalSuggestChain({
-        chainId: 'SanfordNetwork',
-        chainName: 'IDEP Sanford',
-        rpc: 'http://idep.trivium.network:26657',
-        rest: 'http://idep.trivium.network:31317',
+        chainId: 'SanfordNetworkV2',
+        chainName: 'SanfordV2',
+        rpc: 'https://idep.api.trivium.network:26657',
+        rest: 'https://idep.api.trivium.network:1317',
         bip44: {
             coinType: 118,
         },
