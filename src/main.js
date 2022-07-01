@@ -1,17 +1,16 @@
-addPulsar = async(coinType = 529) => {
+addPulsar = async() => {
     if (!window.getOfflineSigner || !window.keplr) {
         alert("Please install keplr extension");
     }
     window.keplr.experimentalSuggestChain({
         chainId: 'pulsar-2',
         chainName: 'Secret Pulsar',
-        rpc: 'https://rpc.pulsar.griptapejs.com/',
-        rest: 'https://api.pulsar.griptapejs.com',
-        
+        rpc: 'https://rpc.pulsar.scrttestnet.com',
+        rest: 'https://api.pulsar.scrttestnet.com',
         bip44: {
-            coinType: coinType,
+            coinType: 529,
         },
-        coinType: coinType,
+        coinType: 529,
         stakeCurrency: {
             coinDenom: 'SCRT',
             coinMinimalDenom: 'uscrt',
@@ -54,8 +53,8 @@ addSanford = async() => {
     }
 
     window.keplr.experimentalSuggestChain({
-        chainId: 'SanfordNetworkV2',
-        chainName: 'SanfordV2',
+        chainId: 'Antora',
+        chainName: 'IDEP Antora',
         rpc: 'https://idep.api.trivium.network:26657',
         rest: 'https://idep.api.trivium.network:1317',
         bip44: {
@@ -65,7 +64,7 @@ addSanford = async() => {
         stakeCurrency: {
             coinDenom: 'IDEP',
             coinMinimalDenom: 'idep',
-            coinDecimals: 8,
+            coinDecimals: 6,
         },
         bech32Config: {
             bech32PrefixAccAddr: 'idep',
@@ -79,14 +78,14 @@ addSanford = async() => {
             {
                 coinDenom: 'IDEP',
                 coinMinimalDenom: 'idep',
-                coinDecimals: 8,
+                coinDecimals: 6,
             },
         ],
         feeCurrencies: [
             {
                 coinDenom: 'IDEP',
                 coinMinimalDenom: 'idep',
-                coinDecimals: 8,
+                coinDecimals: 6,
             },
         ],
         gasPriceStep: {
@@ -94,7 +93,7 @@ addSanford = async() => {
             average: 0.0,
             high: 0.1,
         },
-        features: ['no-legacy-stdTx','ibc-transfer','ibc-go'],
+        features: ['ibc-transfer','ibc-go'],
     });
 }
 
